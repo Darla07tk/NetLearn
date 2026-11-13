@@ -1,0 +1,593 @@
+.ospf-page {
+
+    min-height: 100vh;
+
+    padding: 32px 42px;
+
+    background: #f7faff;
+
+    color: #172033;
+
+}
+
+
+/* BACK */
+
+.ospf-back {
+
+    display: block;
+
+    margin-bottom: 28px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 8px;
+
+    background: #e8f4fd;
+
+    color: #3278c8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.ospf-back:hover {
+
+    background: #dceefa;
+
+}
+
+
+/* INTRO */
+
+.ospf-intro {
+
+    max-width: 1100px;
+
+    margin: 0 auto 42px;
+
+}
+
+.ospf-intro h1 {
+
+    margin: 0 0 26px;
+
+    font-size: clamp(34px, 5vw, 54px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+}
+
+.ospf-intro-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.ospf-info-box {
+
+    padding: 17px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+
+}
+
+.ospf-info-box p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+
+/* SECTIONS */
+
+.ospf-workflow-section,
+.ospf-theory-section {
+
+    max-width: 1100px;
+
+    margin: 0 auto 55px;
+
+}
+
+.ospf-section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+}
+
+.ospf-section-heading h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+}
+
+.ospf-step-counter {
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: #e6f2ff;
+
+    color: #2870bd;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* WORKFLOW */
+
+.ospf-workflow-layout {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
+
+.ospf-workflow {
+
+    width: min(100%, 1000px);
+
+    height: 470px;
+
+    padding: 0;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 16px;
+
+    background: white;
+
+    overflow: hidden;
+
+}
+
+.ospf-workflow-svg {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* LINES */
+
+.ospf-line {
+
+    fill: none;
+
+    stroke: #c9dbea;
+
+    stroke-width: 3;
+
+}
+
+.ospf-line-active {
+
+    stroke: #3190ed;
+
+    stroke-width: 4;
+
+}
+
+
+/* ARROW */
+
+.ospf-arrow-head {
+
+    fill: #3190ed;
+
+}
+
+
+/* DEVICES */
+
+.ospf-device {
+
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+
+    stroke-width: 2;
+
+}
+
+.ospf-node-active .ospf-device {
+
+    fill: #eef7ff;
+
+    stroke: #3190ed;
+
+    stroke-width: 3;
+
+}
+
+.ospf-device-icon {
+
+    fill: #52718e;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.ospf-node-active .ospf-device-icon {
+
+    fill: #1975c8;
+
+}
+
+.ospf-device-label {
+
+    fill: #1e2d3d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* WORKFLOW CONTROLS */
+
+.ospf-workflow-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 10px;
+
+    background: #e8f4fd;
+
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+
+        background 0.2s ease,
+
+        border-color 0.2s ease,
+
+        color 0.2s ease;
+
+}
+
+.ospf-workflow-prev {
+
+    left: -54px;
+
+}
+
+.ospf-workflow-next {
+
+    right: -54px;
+
+}
+
+.ospf-workflow-arrow:hover:not(:disabled) {
+
+    background: #dceefa;
+
+    border-color: #b9d8ee;
+
+    color: #3278c8;
+
+}
+
+.ospf-workflow-arrow:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* STEP INFORMATION */
+
+.ospf-step-panel {
+
+    margin-top: 12px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.ospf-progress {
+
+    height: 4px;
+
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e7eff7;
+
+}
+
+.ospf-progress div {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #3190ed;
+
+    transition: width 0.25s ease;
+
+}
+
+.ospf-step-content {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 0;
+
+    align-items: center;
+
+}
+
+.ospf-step-text h3 {
+
+    margin: 4px 0;
+
+    color: #1d2d40;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.ospf-step-text p {
+
+    margin: 0;
+
+    color: #5c6c7e;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+/* THEORY */
+
+.ospf-theory-section {
+
+    margin-bottom: 42px;
+
+}
+
+.ospf-theory-section:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.ospf-theory-box {
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.ospf-theory-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+}
+
+.ospf-theory-card {
+
+    min-height: 128px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 12px;
+
+    background: #eef6fd;
+
+    box-sizing: border-box;
+
+}
+
+.ospf-theory-card h3 {
+
+    margin: 0 0 10px;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+}
+
+.ospf-theory-points p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .ospf-page {
+
+        padding: 26px 22px;
+
+    }
+
+    .ospf-workflow {
+
+        height: 420px;
+
+    }
+
+    .ospf-theory-grid {
+
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .ospf-page {
+
+        padding: 22px 15px;
+
+    }
+
+    .ospf-workflow {
+
+        height: 390px;
+
+    }
+
+    .ospf-workflow-prev {
+
+        left: -2px;
+
+    }
+
+    .ospf-workflow-next {
+
+        right: -2px;
+
+    }
+
+    .ospf-workflow-arrow {
+
+        width: 36px;
+
+        height: 46px;
+
+    }
+
+    .ospf-theory-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

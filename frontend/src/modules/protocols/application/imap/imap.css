@@ -1,0 +1,452 @@
+/* =========================================================
+   IMAP PAGE
+========================================================= */
+
+.imap-page {
+    min-height: 100vh;
+    padding: 32px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+}
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.imap-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.imap-back:hover {
+    background: #dceefa;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.imap-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.imap-intro h1 {
+    margin: 0 0 26px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.imap-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.imap-intro-points > div {
+    padding: 15px 18px;
+    border-radius: 10px;
+    background: #eef6fd;
+}
+
+.imap-intro-points p {
+    margin: 0;
+    color: #315b82;
+    font-size: 14px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.imap-workflow-section,
+.imap-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.imap-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.imap-section-heading h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.imap-step-counter {
+    color: #52718e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.imap-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.imap-topology {
+    position: relative;
+    width: min(100%, 920px);
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #d9e7f5;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 10px 28px rgba(35, 82, 125, 0.05);
+}
+
+.imap-topology-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================================
+   KEYWORD
+========================================================= */
+
+.imap-keyword-box {
+    fill: #edf6ff;
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.imap-keyword-text {
+    fill: #3278c8;
+    font-size: 10px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* =========================================================
+   NETWORK LINES
+========================================================= */
+
+.imap-svg-line {
+    fill: none;
+    stroke: #c9dbea;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.imap-flow-line {
+    fill: none;
+    stroke: #3190ed;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.imap-flow-arrow-line {
+    fill: none;
+    stroke: #3190ed;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.imap-arrow-head {
+    fill: #3190ed;
+}
+
+/* =========================================================
+   DEVICES
+========================================================= */
+
+.imap-svg-device {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.imap-svg-router {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.imap-active-device {
+    fill: #eef7ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+/* =========================================================
+   DEVICE SYMBOLS
+========================================================= */
+
+.imap-svg-symbol {
+    fill: #52718e;
+    font-size: 18px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.imap-active-symbol {
+    fill: #1975c8;
+}
+
+/* =========================================================
+   DEVICE LABELS
+========================================================= */
+
+.imap-svg-label {
+    fill: #1e2d3d;
+    font-size: 13px;
+    font-weight: 500;
+    text-anchor: middle;
+}
+
+/* =========================================================
+   WORKFLOW ARROWS
+========================================================= */
+
+.imap-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+    background: #e8f4fd;
+    color: #4d8abd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.imap-workflow-prev {
+    left: -54px;
+}
+
+.imap-workflow-next {
+    right: -54px;
+}
+
+.imap-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.imap-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* =========================================================
+   STEP PANEL
+========================================================= */
+
+.imap-step-panel {
+    margin-top: 12px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.imap-step-progress {
+    height: 5px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.imap-step-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.imap-step-content {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.imap-step-text h3 {
+    margin: 0 0 7px;
+    color: #1d2d40;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.imap-step-text p {
+    margin: 0;
+    color: #5c6c7e;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* =========================================================
+   THEORY
+========================================================= */
+
+.imap-theory-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.imap-theory-card {
+    min-height: 145px;
+    padding: 18px;
+    border: 1px solid #d5e3ef;
+    border-radius: 14px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.imap-theory-card h3 {
+    margin: 0 0 14px;
+    color: #172033;
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.imap-theory-point {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #eef6fd;
+    color: #405268;
+    font-size: 13px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.imap-theory-point p {
+    margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+    .imap-workflow-prev {
+        left: -45px;
+    }
+
+    .imap-workflow-next {
+        right: -45px;
+    }
+
+    .imap-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .imap-page {
+        padding: 24px 20px 50px;
+    }
+
+    .imap-topology {
+        width: 100%;
+        height: 320px;
+    }
+
+    .imap-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .imap-workflow-prev {
+        left: -10px;
+    }
+
+    .imap-workflow-next {
+        right: -10px;
+    }
+}
+
+@media (max-width: 650px) {
+    .imap-theory-box {
+        grid-template-columns: 1fr;
+    }
+
+    .imap-topology {
+        height: 290px;
+    }
+
+    .imap-svg-label {
+        font-size: 10px;
+    }
+
+    .imap-svg-symbol {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .imap-page {
+        padding: 20px 15px 40px;
+    }
+
+    .imap-intro h1 {
+        font-size: 34px;
+    }
+
+    .imap-topology {
+        height: 260px;
+    }
+
+    .imap-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .imap-step-text h3 {
+        font-size: 16px;
+    }
+}

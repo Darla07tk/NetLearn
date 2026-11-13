@@ -1,0 +1,593 @@
+.icmp-page {
+
+    min-height: 100vh;
+
+    padding: 32px 42px;
+
+    background: #f7faff;
+
+    color: #172033;
+
+}
+
+
+/* BACK */
+
+.icmp-back {
+
+    display: block;
+
+    margin-bottom: 28px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 8px;
+
+    background: #e8f4fd;
+
+    color: #3278c8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.icmp-back:hover {
+
+    background: #dceefa;
+
+}
+
+
+/* INTRO */
+
+.icmp-intro {
+
+    max-width: 1100px;
+
+    margin: 0 auto 42px;
+
+}
+
+.icmp-intro h1 {
+
+    margin: 0 0 26px;
+
+    font-size: clamp(34px, 5vw, 54px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+}
+
+.icmp-intro-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.icmp-info-box {
+
+    padding: 17px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+
+}
+
+.icmp-info-box p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+
+/* SECTIONS */
+
+.icmp-workflow-section,
+.icmp-theory-section {
+
+    max-width: 1100px;
+
+    margin: 0 auto 55px;
+
+}
+
+.icmp-section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+}
+
+.icmp-section-heading h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+}
+
+.icmp-step-counter {
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: #e6f2ff;
+
+    color: #2870bd;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* WORKFLOW */
+
+.icmp-workflow-layout {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
+
+.icmp-workflow {
+
+    width: min(100%, 1000px);
+
+    height: 470px;
+
+    padding: 0;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 16px;
+
+    background: white;
+
+    overflow: hidden;
+
+}
+
+.icmp-workflow-svg {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* LINES */
+
+.icmp-line {
+
+    fill: none;
+
+    stroke: #c9dbea;
+
+    stroke-width: 3;
+
+}
+
+.icmp-line-active {
+
+    stroke: #3190ed;
+
+    stroke-width: 4;
+
+}
+
+
+/* ARROW */
+
+.icmp-arrow-head {
+
+    fill: #3190ed;
+
+}
+
+
+/* DEVICES */
+
+.icmp-device {
+
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+
+    stroke-width: 2;
+
+}
+
+.icmp-node-active .icmp-device {
+
+    fill: #eef7ff;
+
+    stroke: #3190ed;
+
+    stroke-width: 3;
+
+}
+
+.icmp-device-icon {
+
+    fill: #52718e;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.icmp-node-active .icmp-device-icon {
+
+    fill: #1975c8;
+
+}
+
+.icmp-device-label {
+
+    fill: #1e2d3d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* WORKFLOW CONTROLS */
+
+.icmp-workflow-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 10px;
+
+    background: #e8f4fd;
+
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+
+        background 0.2s ease,
+
+        border-color 0.2s ease,
+
+        color 0.2s ease;
+
+}
+
+.icmp-workflow-prev {
+
+    left: -54px;
+
+}
+
+.icmp-workflow-next {
+
+    right: -54px;
+
+}
+
+.icmp-workflow-arrow:hover:not(:disabled) {
+
+    background: #dceefa;
+
+    border-color: #b9d8ee;
+
+    color: #3278c8;
+
+}
+
+.icmp-workflow-arrow:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* STEP INFORMATION */
+
+.icmp-step-panel {
+
+    margin-top: 12px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.icmp-progress {
+
+    height: 4px;
+
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e7eff7;
+
+}
+
+.icmp-progress div {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #3190ed;
+
+    transition: width 0.25s ease;
+
+}
+
+.icmp-step-content {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 0;
+
+    align-items: center;
+
+}
+
+.icmp-step-text h3 {
+
+    margin: 4px 0;
+
+    color: #1d2d40;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.icmp-step-text p {
+
+    margin: 0;
+
+    color: #5c6c7e;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+/* THEORY */
+
+.icmp-theory-section {
+
+    margin-bottom: 42px;
+
+}
+
+.icmp-theory-section:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.icmp-theory-box {
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.icmp-theory-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+}
+
+.icmp-theory-card {
+
+    min-height: 128px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 12px;
+
+    background: #eef6fd;
+
+    box-sizing: border-box;
+
+}
+
+.icmp-theory-card h3 {
+
+    margin: 0 0 10px;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
+
+}
+
+.icmp-theory-points p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .icmp-page {
+
+        padding: 26px 22px;
+
+    }
+
+    .icmp-workflow {
+
+        height: 420px;
+
+    }
+
+    .icmp-theory-grid {
+
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .icmp-page {
+
+        padding: 22px 15px;
+
+    }
+
+    .icmp-workflow {
+
+        height: 390px;
+
+    }
+
+    .icmp-workflow-prev {
+
+        left: -2px;
+
+    }
+
+    .icmp-workflow-next {
+
+        right: -2px;
+
+    }
+
+    .icmp-workflow-arrow {
+
+        width: 36px;
+
+        height: 46px;
+
+    }
+
+    .icmp-theory-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

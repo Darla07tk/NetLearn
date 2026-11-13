@@ -1,0 +1,313 @@
+.protocols-page {
+    min-height: 100vh;
+    display: flex;
+    background: #f8fbff;
+    color: #12344d;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.protocols-sidebar {
+    width: 270px;
+    min-height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #d7e3ee;
+    padding: 28px 18px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+.protocols-back {
+    border: none;
+    background: #1769aa;
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.protocols-back:hover {
+    background: #07518f;
+}
+
+.protocols-sidebar h2 {
+    margin: 0 0 25px;
+    color: #173f63;
+    font-size: 28px;
+    line-height: 1.15;
+}
+
+
+/* =====================================================
+   LAYERS
+===================================================== */
+
+.protocols-layer-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.protocols-layer {
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #d7e3ee;
+    background: #ffffff;
+    color: #07518f;
+    cursor: pointer;
+    text-align: left;
+}
+
+.protocols-layer:hover {
+    background: #f4f9fd;
+}
+
+.protocols-layer.active {
+    background: #eaf4fc;
+}
+
+.protocols-layer span {
+    width: 25px;
+    font-size: 13px;
+    color: #07518f;
+    flex-shrink: 0;
+}
+
+.protocols-layer strong {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.protocols-content {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 48px 60px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN HEADING AND LAYER COUNTER
+===================================================== */
+
+.protocols-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.protocols-header h1 {
+    margin: 0;
+    color: #173f63;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.protocols-header::after {
+    content: "Layer " attr(data-layer);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 38px;
+    padding: 8px 14px;
+    border: 1px solid #b8d7ef;
+    border-radius: 6px;
+    background: #eef6fc;
+    color: #1769aa;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   PROTOCOL CONTENT
+===================================================== */
+
+.protocols-layer-content {
+    background: #ffffff;
+    border: 1px solid #d7e3ee;
+    border-radius: 8px;
+    padding: 28px;
+}
+
+
+/* =====================================================
+   LAYER SUBHEADING
+===================================================== */
+
+.protocols-section-title {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    margin-bottom: 22px;
+    background: #f4f9fd;
+    border: 2px solid #c7d9eb;
+    border-radius: 8px;
+    color: #07518f;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* =====================================================
+   PROTOCOLS
+===================================================== */
+
+.protocols-grid {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.protocol-card {
+    flex: 1;
+    min-width: 0;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    background: #ffffff;
+    border: 2px solid #c7d9eb;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.protocol-card:hover {
+    border-color: #087ee8;
+    box-shadow: 0 5px 16px rgba(7, 81, 143, 0.08);
+    transform: translateY(-2px);
+}
+
+.protocol-card h3 {
+    margin: 0;
+    color: #07518f;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.protocols-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.protocols-navigation button {
+    min-width: 100px;
+    padding: 10px 18px;
+    border: 1px solid #c7d9eb;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #07518f;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.protocols-navigation button:hover:not(:disabled) {
+    border-color: #087ee8;
+    background: #f4f9fd;
+}
+
+.protocols-navigation button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .protocols-sidebar {
+        width: 240px;
+    }
+
+    .protocols-content {
+        padding: 30px 25px 50px;
+    }
+
+    .protocols-grid {
+        gap: 10px;
+    }
+
+    .protocol-card {
+        padding: 14px 8px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .protocols-page {
+        flex-direction: column;
+    }
+
+    .protocols-sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #d7e3ee;
+    }
+
+    .protocols-layer-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .protocols-content {
+        padding: 30px 20px 50px;
+    }
+
+    .protocols-grid {
+        flex-wrap: wrap;
+    }
+
+    .protocol-card {
+        flex: 1 1 140px;
+    }
+
+    .protocols-header h1 {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,358 @@
+.https-page {
+    min-height: 100vh;
+    padding: 32px 42px;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* BACK */
+
+.https-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+
+    background: #e8f4fd;
+    color: #3278c8;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.https-back:hover {
+    background: #dceefa;
+}
+
+
+/* INTRO */
+
+.https-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.https-intro h1 {
+    margin: 0 0 26px;
+
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.https-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.https-info-box {
+    padding: 17px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+}
+
+.https-info-box p {
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* SECTIONS */
+
+.https-workflow-section,
+.https-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.https-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.https-section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.https-section-heading p {
+    margin: 0;
+
+    color: #52718e;
+
+    font-size: 13px;
+}
+
+
+/* WORKFLOW */
+
+.https-workflow-layout {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.https-workflow {
+    width: min(100%, 920px);
+    height: 400px;
+
+    padding: 10px 0;
+
+    border: 1px solid #d9e7f5;
+    border-radius: 16px;
+
+    background: white;
+}
+
+.https-workflow-svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* LINES */
+
+.https-line {
+    fill: none;
+
+    stroke: #c9dbea;
+    stroke-width: 3;
+}
+
+.https-line-active {
+    stroke: #3190ed;
+    stroke-width: 4;
+}
+
+
+/* DEVICES */
+
+.https-device {
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.https-node-active .https-device {
+    fill: #eef7ff;
+
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.https-device-icon {
+    fill: #52718e;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.https-node-active .https-device-icon {
+    fill: #1975c8;
+}
+
+.https-device-label {
+    fill: #1e2d3d;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* PACKET */
+
+.https-packet {
+    fill: #edf6ff;
+
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.https-packet-text {
+    fill: #3278c8;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* ARROWS */
+
+.https-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.https-workflow-prev {
+    left: -54px;
+}
+
+.https-workflow-next {
+    right: -54px;
+}
+
+.https-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.https-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* STEP INFORMATION */
+
+.https-step-panel {
+    margin-top: 12px;
+    padding: 18px 20px;
+
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.https-step-content {
+    display: flex;
+    align-items: center;
+}
+
+.https-step-text h3 {
+    margin: 0 0 6px;
+
+    color: #1d2d40;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.https-step-text p {
+    margin: 0;
+
+    color: #5c6c7e;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* THEORY */
+
+.https-theory-box {
+    padding: 20px;
+
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.https-theory-points {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.https-theory-points p {
+    margin: 0;
+    padding: 12px 14px;
+
+    border-radius: 9px;
+
+    background: #eef6fd;
+
+    color: #315b82;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .https-page {
+        padding: 24px 20px;
+    }
+
+    .https-workflow {
+        width: 100%;
+        height: 340px;
+    }
+
+    .https-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .https-workflow-prev {
+        left: -10px;
+    }
+
+    .https-workflow-next {
+        right: -10px;
+    }
+
+}

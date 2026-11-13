@@ -1,0 +1,615 @@
+.arp-page {
+    min-height: 100vh;
+    padding: 36px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.arp-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.arp-intro h1 {
+    margin: 0 0 24px;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    color: #172033;
+}
+
+.arp-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.arp-intro-points > div {
+    padding: 15px 18px;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.arp-intro-points p {
+    margin: 0;
+    color: #405268;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* SECTION HEADINGS */
+
+.arp-topology-section,
+.arp-terms,
+.arp-types,
+.arp-working {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.arp-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.arp-section-heading h2 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #172033;
+}
+
+.arp-workflow-subtitle {
+    margin: 4px 0 0;
+    color: #718094;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.arp-step-counter {
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #e8f3fc;
+    color: #4d7da8;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* WORKFLOW LAYOUT */
+
+.arp-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* WORKFLOW ARROWS */
+
+.arp-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.arp-workflow-prev {
+    left: -54px;
+}
+
+.arp-workflow-next {
+    right: -54px;
+}
+
+.arp-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.arp-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* TOPOLOGY */
+
+.arp-topology {
+    position: relative;
+    width: min(100%, 920px);
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #d9e7f5;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(35, 82, 125, 0.06);
+}
+
+.arp-network-label {
+    position: absolute;
+    z-index: 4;
+    top: 12px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #edf6ff;
+    color: #5d87ad;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1.1px;
+}
+
+.arp-network-one {
+    left: 14px;
+}
+
+.arp-network-two {
+    right: 14px;
+}
+
+.arp-topology-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.arp-svg-line {
+    stroke: #d2dfeb;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+}
+
+.arp-svg-line-active {
+    stroke: #3190ed;
+    stroke-width: 3.5;
+    filter: drop-shadow(0 0 4px rgba(49, 144, 237, 0.35));
+}
+
+.arp-svg-device {
+    fill: #f8fbff;
+    stroke: #cbdceb;
+    stroke-width: 2;
+}
+
+.arp-svg-router {
+    fill: #f8fbff;
+}
+
+.arp-svg-switch {
+    fill: #f8fbff;
+}
+
+.arp-svg-pc {
+    fill: #f8fbff;
+}
+
+.arp-svg-active {
+    fill: #e4f2ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.arp-svg-symbol {
+    fill: #52718e;
+    font-size: 17px;
+    font-weight: 400;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.arp-svg-node {
+    transition: 0.2s ease;
+}
+
+.arp-svg-node:has(.arp-svg-active) .arp-svg-symbol {
+    fill: #1975c8;
+}
+
+.arp-svg-label {
+    fill: #1e2d3d;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.arp-packet-label {
+    fill: #edf6ff;
+}
+
+.arp-packet-text {
+    fill: #4d7da8;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* STEP PANEL */
+
+.arp-step-panel {
+    margin-top: 10px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.arp-step-progress {
+    height: 5px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.arp-step-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.arp-step-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 16px;
+    align-items: center;
+}
+
+.arp-step-number {
+    font-size: 27px;
+    font-weight: 400;
+    color: #a8ccea;
+}
+
+.arp-step-text h3 {
+    margin: 0 0 7px;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #172033;
+}
+
+.arp-step-text p {
+    margin: 0;
+    color: #4d5d70;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* ARP CACHE */
+
+.arp-cache {
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #f4f8fc;
+}
+
+.arp-cache h3 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #172033;
+}
+
+.arp-cache-head,
+.arp-cache-row {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 8px;
+}
+
+.arp-cache-head {
+    padding-bottom: 6px;
+    color: #647487;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.arp-cache-row {
+    padding: 6px 0;
+    border-top: 1px solid #dce7f0;
+    font-family: monospace;
+    font-size: 11px;
+    color: #405268;
+}
+
+
+/* CONTROLS */
+
+.arp-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.arp-controls > button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 8px;
+    background: #e5f2fc;
+    color: #4d7da8;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.arp-controls > button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.arp-dots {
+    display: flex;
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.arp-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #cbd8e4;
+    cursor: pointer;
+}
+
+.arp-dots .arp-dot-active {
+    width: 20px;
+    border-radius: 8px;
+    background: #8dbde3;
+}
+
+
+/* ARP BUILDING BLOCKS */
+
+.arp-term-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.arp-term-grid article,
+.arp-type-grid article {
+    padding: 20px;
+    border: 1px solid #dbe7f1;
+    border-radius: 14px;
+    background: white;
+}
+
+.arp-term-grid h3,
+.arp-type-grid h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: #172033;
+}
+
+.arp-term-grid p,
+.arp-type-grid p {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f1f7fd;
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* WORKING */
+
+.arp-working {
+    padding: 28px;
+    border-radius: 18px;
+    background: #eaf5ff;
+}
+
+.arp-working h2 {
+    margin: 0 0 17px;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #172033;
+}
+
+.arp-working-list {
+    display: grid;
+    gap: 7px;
+}
+
+.arp-working-list p {
+    margin: 0;
+    padding: 11px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.arp-working-list strong {
+    display: inline-block;
+    width: 28px;
+    color: #5d87ad;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* ARP TYPES */
+
+.arp-type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.arp-type-grid article {
+    min-height: 145px;
+}
+
+.arp-type-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.arp-type-grid li {
+    margin: 0 0 7px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #f1f7fd;
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.arp-type-grid li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .arp-workflow-prev {
+        left: -48px;
+    }
+
+    .arp-workflow-next {
+        right: -48px;
+    }
+
+    .arp-workflow-arrow {
+        width: 38px;
+        height: 48px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 800px) {
+    .arp-page {
+        padding: 26px 22px 50px;
+    }
+
+    .arp-term-grid,
+    .arp-type-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arp-topology {
+        height: 300px;
+    }
+
+    .arp-step-content {
+        grid-template-columns: 1fr;
+    }
+
+    .arp-step-number {
+        display: none;
+    }
+
+    .arp-workflow-prev {
+        left: 8px;
+    }
+
+    .arp-workflow-next {
+        right: 8px;
+    }
+
+    .arp-workflow-arrow {
+        width: 36px;
+        height: 46px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 550px) {
+    .arp-page {
+        padding: 20px 15px 40px;
+    }
+
+    .arp-intro h1 {
+        font-size: 34px;
+    }
+
+    .arp-topology {
+        height: 260px;
+    }
+
+    .arp-svg-label {
+        font-size: 10px;
+    }
+
+    .arp-svg-symbol {
+        font-size: 14px;
+    }
+
+    .arp-controls {
+        flex-wrap: wrap;
+    }
+
+    .arp-dots {
+        order: 3;
+        width: 100%;
+    }
+
+    .arp-section-heading h2 {
+        font-size: 24px;
+    }
+}

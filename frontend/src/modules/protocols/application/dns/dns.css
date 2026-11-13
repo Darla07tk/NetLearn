@@ -1,0 +1,289 @@
+.dns-page {
+    min-height: 100vh;
+    padding: 32px 42px;
+    background: #f7faff;
+    color: #172033;
+}
+
+.dns-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dns-back:hover {
+    background: #dceefa;
+}
+
+.dns-intro {
+    max-width: 1050px;
+    margin: 0 auto 38px;
+}
+
+.dns-intro h1 {
+    margin: 10px 0 22px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1;
+}
+
+.dns-intro-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dns-info-box {
+    display: flex;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid #dbe8f5;
+    border-radius: 13px;
+    background: #edf6ff;
+}
+
+.dns-info-box p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.dns-workflow-section,
+.dns-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.dns-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.dns-section-heading h2 {
+    margin: 5px 0 0;
+    font-size: 25px;
+}
+
+.dns-section-heading span {
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #e6f2ff;
+    color: #2870bd;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.dns-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.dns-workflow {
+    width: min(100%, 1000px);
+    height: 470px;
+}
+
+.dns-workflow-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dns-line {
+    fill: none;
+    stroke: #c9dbea;
+    stroke-width: 3;
+}
+
+.dns-line-active {
+    stroke: #3190ed;
+    stroke-width: 4;
+}
+
+.dns-device {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.dns-node-active .dns-device {
+    fill: #eef7ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.dns-device-icon {
+    fill: #52718e;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.dns-node-active .dns-device-icon {
+    fill: #1975c8;
+}
+
+.dns-device-label {
+    fill: #1e2d3d;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dns-packet {
+    fill: #edf6ff;
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.dns-packet-text {
+    fill: #3278c8;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.dns-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+    background: #e8f4fd;
+    color: #4d8abd;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.dns-workflow-prev {
+    left: -54px;
+}
+
+.dns-workflow-next {
+    right: -54px;
+}
+
+.dns-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.dns-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.dns-step-panel {
+    margin-top: 10px;
+    padding: 14px 18px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.dns-progress {
+    height: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.dns-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.dns-step-content {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+}
+
+.dns-step-number {
+    font-size: 25px;
+    font-weight: 900;
+    color: #b5d6f2;
+}
+
+.dns-step-text h3 {
+    margin: 4px 0;
+    font-size: 18px;
+}
+
+.dns-step-text p {
+    margin: 0;
+    color: #5c6c7e;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.dns-theory-box {
+    padding: 16px 20px;
+    border: 1px solid #dbe8f5;
+    border-radius: 13px;
+    background: white;
+}
+
+.dns-theory-box p {
+    margin: 0 0 10px;
+    padding: 13px 14px;
+    border-radius: 9px;
+    background: #edf6ff;
+    color: #28547d;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.dns-theory-box p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 850px) {
+
+    .dns-page {
+        padding: 24px 20px;
+    }
+
+    .dns-intro-points {
+        grid-template-columns: 1fr;
+    }
+
+    .dns-workflow {
+        width: 100%;
+        height: 430px;
+    }
+
+    .dns-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .dns-workflow-prev {
+        left: -10px;
+    }
+
+    .dns-workflow-next {
+        right: -10px;
+    }
+}

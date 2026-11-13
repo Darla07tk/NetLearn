@@ -1,0 +1,532 @@
+.dsl-page {
+
+    min-height: 100vh;
+
+    padding: 32px 42px;
+
+    background: #f7faff;
+
+    color: #172033;
+
+}
+
+
+/* BACK */
+
+.dsl-back {
+
+    display: block;
+
+    margin-bottom: 28px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 8px;
+
+    background: #e8f4fd;
+
+    color: #3278c8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+.dsl-back:hover {
+
+    background: #dceefa;
+
+}
+
+
+/* INTRO */
+
+.dsl-intro {
+
+    max-width: 1100px;
+
+    margin: 0 auto 42px;
+
+}
+
+.dsl-intro h1 {
+
+    margin: 0 0 26px;
+
+    font-size: clamp(34px, 5vw, 54px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+}
+
+.dsl-intro-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.dsl-info-box {
+
+    padding: 17px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+
+}
+
+.dsl-info-box p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+
+/* SECTIONS */
+
+.dsl-workflow-section,
+.dsl-theory-section {
+
+    max-width: 1100px;
+
+    margin: 0 auto 55px;
+
+}
+
+.dsl-section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+}
+
+.dsl-section-heading h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+}
+
+.dsl-step-counter {
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: #e6f2ff;
+
+    color: #2870bd;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+}
+
+
+/* WORKFLOW */
+
+.dsl-workflow-layout {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
+
+.dsl-workflow {
+
+    width: min(100%, 1000px);
+
+    height: 400px;
+
+    padding: 10px 0;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 16px;
+
+    background: white;
+
+}
+
+.dsl-workflow-svg {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* LINES */
+
+.dsl-line {
+
+    fill: none;
+
+    stroke: #c9dbea;
+
+    stroke-width: 3;
+
+}
+
+.dsl-line-active {
+
+    stroke: #3190ed;
+
+    stroke-width: 4;
+
+}
+
+.dsl-arrow-head {
+
+    fill: #3190ed;
+
+}
+
+
+/* DEVICES */
+
+.dsl-device {
+
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+
+    stroke-width: 2;
+
+}
+
+.dsl-node-active .dsl-device {
+
+    fill: #eef7ff;
+
+    stroke: #3190ed;
+
+    stroke-width: 3;
+
+}
+
+.dsl-device-icon {
+
+    fill: #52718e;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.dsl-node-active .dsl-device-icon {
+
+    fill: #1975c8;
+
+}
+
+.dsl-device-label {
+
+    fill: #1e2d3d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* ARROWS */
+
+.dsl-workflow-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+
+    border-radius: 10px;
+
+    background: #e8f4fd;
+
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+
+        background 0.2s ease,
+
+        border-color 0.2s ease,
+
+        color 0.2s ease;
+
+}
+
+.dsl-workflow-prev {
+
+    left: -54px;
+
+}
+
+.dsl-workflow-next {
+
+    right: -54px;
+
+}
+
+.dsl-workflow-arrow:hover:not(:disabled) {
+
+    background: #dceefa;
+
+    border-color: #b9d8ee;
+
+    color: #3278c8;
+
+}
+
+.dsl-workflow-arrow:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+/* STEP INFORMATION */
+
+.dsl-step-panel {
+
+    margin-top: 12px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.dsl-progress {
+
+    height: 4px;
+
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e7eff7;
+
+}
+
+.dsl-progress div {
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #3190ed;
+
+    transition: width 0.25s ease;
+
+}
+
+.dsl-step-content {
+
+    display: block;
+
+}
+
+.dsl-step-text h3 {
+
+    margin: 4px 0;
+
+    color: #1d2d40;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.dsl-step-text p {
+
+    margin: 0;
+
+    color: #5c6c7e;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+}
+
+
+/* THEORY */
+
+.dsl-theory-box {
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+
+    border-radius: 14px;
+
+    background: white;
+
+}
+
+.dsl-theory-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(
+
+        2,
+
+        minmax(0, 1fr)
+
+    );
+
+    gap: 8px;
+
+}
+
+.dsl-theory-card {
+
+    padding: 17px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+
+}
+
+.dsl-theory-card h3 {
+
+    margin: 0 0 7px;
+
+    color: #172033;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+}
+
+.dsl-theory-points p {
+
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .dsl-page {
+
+        padding: 24px 20px;
+
+    }
+
+    .dsl-workflow {
+
+        height: 380px;
+
+    }
+
+    .dsl-workflow-prev {
+
+        left: -14px;
+
+    }
+
+    .dsl-workflow-next {
+
+        right: -14px;
+
+    }
+
+    .dsl-theory-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

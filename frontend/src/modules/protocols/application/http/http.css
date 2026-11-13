@@ -1,0 +1,343 @@
+.http-page {
+    min-height: 100vh;
+    padding: 32px 42px;
+    background: #f7faff;
+    color: #172033;
+}
+
+/* BACK */
+
+.http-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.http-back:hover {
+    background: #dceefa;
+}
+
+/* INTRO */
+
+.http-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.http-intro h1 {
+    margin: 0 0 26px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.http-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.http-info-box {
+    padding: 17px 18px;
+    border-radius: 10px;
+    background: #eef6fd;
+}
+
+.http-info-box p {
+    margin: 0;
+    color: #315b82;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* SECTIONS */
+
+.http-workflow-section,
+.http-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.http-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.http-section-heading h2 {
+    margin: 0 0 5px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.http-section-heading p {
+    margin: 0;
+    color: #52718e;
+    font-size: 13px;
+}
+
+/* WORKFLOW LAYOUT */
+
+.http-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.http-workflow {
+    width: min(100%, 920px);
+    height: 400px;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border: 1px solid #d9e7f5;
+    border-radius: 16px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.http-workflow-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* LINKS */
+
+.http-line {
+    fill: none;
+    stroke: #c9dbea;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    transition: stroke 0.2s ease, stroke-width 0.2s ease;
+}
+
+.http-line-active {
+    stroke: #3190ed;
+    stroke-width: 4;
+}
+
+/* DEVICES */
+
+.http-device {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.http-node-active .http-device {
+    fill: #eef7ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.http-device-icon {
+    fill: #52718e;
+    font-size: 17px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.http-node-active .http-device-icon {
+    fill: #1975c8;
+}
+
+.http-device-label {
+    fill: #1e2d3d;
+    font-size: 13px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+/* PACKET LABEL */
+
+.http-packet {
+    fill: #edf6ff;
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.http-packet-text {
+    fill: #3278c8;
+    font-size: 10px;
+    font-weight: 800;
+    pointer-events: none;
+}
+
+/* WORKFLOW NAVIGATION */
+
+.http-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 52px;
+    padding: 0;
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+    background: #e8f4fd;
+    color: #4d8abd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.http-workflow-prev {
+    left: -54px;
+}
+
+.http-workflow-next {
+    right: -54px;
+}
+
+.http-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.http-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* CURRENT STEP */
+
+.http-step-panel {
+    margin-top: 12px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.http-step-content {
+    display: flex;
+    align-items: center;
+}
+
+.http-step-text h3 {
+    margin: 0 0 6px;
+    color: #1d2d40;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.http-step-text p {
+    margin: 0;
+    color: #5c6c7e;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* THEORY */
+
+.http-theory-box {
+    padding: 20px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.http-theory-box h3 {
+    margin: 0 0 14px;
+    color: #1d2d40;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.http-theory-points {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.http-theory-points p {
+    margin: 0;
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: #eef6fd;
+    color: #315b82;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .http-page {
+        padding: 24px 20px;
+    }
+
+    .http-workflow {
+        width: 100%;
+        height: 340px;
+    }
+
+    .http-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .http-workflow-prev {
+        left: -10px;
+    }
+
+    .http-workflow-next {
+        right: -10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .http-page {
+        padding: 20px 14px;
+    }
+
+    .http-workflow {
+        height: 280px;
+    }
+
+    .http-workflow-arrow {
+        width: 30px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .http-workflow-prev {
+        left: -8px;
+    }
+
+    .http-workflow-next {
+        right: -8px;
+    }
+
+    .http-section-heading h2 {
+        font-size: 21px;
+    }
+}

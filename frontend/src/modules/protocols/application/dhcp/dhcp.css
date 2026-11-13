@@ -1,0 +1,677 @@
+/* DHCP THEORY - ARP STYLE */
+
+.dhcp-theory-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.dhcp-theory-section {
+    padding: 18px;
+    border: 1px solid #dbe7f1;
+    border-radius: 14px;
+    background: white;
+}
+
+.dhcp-theory-section h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: #172033;
+}
+
+.dhcp-theory-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dhcp-theory-points > div {
+    position: relative;
+    padding: 10px 12px 10px 24px;
+    border-radius: 8px;
+    background: #f1f7fd;
+    color: #405268;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.dhcp-theory-points > div::before {
+    content: "";
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #2678c5;
+    font-weight: 700;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .dhcp-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .dhcp-theory-box {
+        grid-template-columns: 1fr;
+    }
+}
+.dhcp-page {
+    min-height: 100vh;
+    padding: 32px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* BACK */
+
+.dhcp-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dhcp-back::after {
+    content: "Back";
+    font-size: 13px;
+}
+
+.dhcp-back:hover {
+    background: #dceefa;
+}
+
+
+/* INTRO */
+
+.dhcp-intro {
+    max-width: 1100px;
+    margin: 0 auto 45px;
+}
+
+.dhcp-intro h1 {
+    margin: 0 0 24px;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.dhcp-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.dhcp-intro-points > div {
+    padding: 15px 18px;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.dhcp-intro-points p {
+    margin: 0;
+    color: #405268;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* COMMON SECTIONS */
+
+.dhcp-workflow-section,
+.dhcp-components,
+.dhcp-settings,
+.dhcp-messages,
+.dhcp-security,
+.dhcp-packet {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.dhcp-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.dhcp-section-heading h2 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #172033;
+}
+
+.dhcp-workflow-subtitle {
+    display: none;
+}
+
+
+/* WORKFLOW */
+
+.dhcp-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* ARROWS */
+
+.dhcp-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.dhcp-workflow-prev {
+    left: -54px;
+}
+
+.dhcp-workflow-next {
+    right: -54px;
+}
+
+.dhcp-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.dhcp-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* TOPOLOGY */
+
+.dhcp-topology {
+    position: relative;
+    width: min(100%, 920px);
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #d9e7f5;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(35, 82, 125, 0.06);
+}
+
+.dhcp-topology-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dhcp-svg-line {
+    stroke: #d2dfeb;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+}
+
+.dhcp-svg-line-active {
+    stroke: #3190ed;
+    stroke-width: 3.5;
+    filter: drop-shadow(
+        0 0 4px rgba(49, 144, 237, 0.35)
+    );
+}
+
+.dhcp-svg-device {
+    fill: #f8fbff;
+    stroke: #cbdceb;
+    stroke-width: 2;
+}
+
+.dhcp-svg-active {
+    fill: #e4f2ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.dhcp-svg-symbol {
+    fill: #52718e;
+    font-size: 18px;
+    font-weight: 400;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.dhcp-svg-node:has(.dhcp-svg-active)
+.dhcp-svg-symbol {
+    fill: #1975c8;
+}
+
+.dhcp-svg-label {
+    fill: #1e2d3d;
+    font-size: 12px;
+    font-weight: 400;
+    text-anchor: middle;
+}
+
+.dhcp-packet-label {
+    fill: #edf6ff;
+}
+
+.dhcp-packet-text {
+    fill: #4d7da8;
+    font-size: 10px;
+    font-weight: 400;
+    text-anchor: middle;
+}
+
+
+/* STEP PANEL */
+
+.dhcp-step-panel {
+    margin-top: 10px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.dhcp-step-progress {
+    height: 5px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.dhcp-step-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.dhcp-step-content {
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+}
+
+.dhcp-step-text h3 {
+    margin: 0 0 7px;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #172033;
+}
+
+.dhcp-step-text p {
+    margin: 0;
+    color: #4d5d70;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* CONTROLS */
+
+.dhcp-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* Previous / Next buttons are removed.
+   The large workflow arrows remain unchanged. */
+
+.dhcp-controls > button {
+    display: none;
+}
+
+.dhcp-dots {
+    display: flex;
+    max-width: 650px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dhcp-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #cbd8e4;
+    cursor: pointer;
+}
+
+.dhcp-dots .dhcp-dot-active {
+    width: 20px;
+    border-radius: 8px;
+    background: #8dbde3;
+}
+
+
+/* THEORY BOX STRUCTURE */
+
+.dhcp-components,
+.dhcp-settings,
+.dhcp-messages,
+.dhcp-security,
+.dhcp-packet {
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+
+/* COMPONENTS */
+
+.dhcp-component-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.dhcp-component-grid article {
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.dhcp-component-grid h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: #172033;
+}
+
+.dhcp-component-grid p {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* NETWORK SETTINGS */
+
+.dhcp-setting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.dhcp-setting-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.dhcp-setting-grid strong {
+    color: #172033;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dhcp-setting-grid span {
+    color: #405268;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* OTHER MESSAGES */
+
+.dhcp-message-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.dhcp-message-grid article {
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.dhcp-message-grid h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #172033;
+}
+
+.dhcp-message-grid p {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* SECURITY */
+
+.dhcp-security-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.dhcp-security-grid article {
+    padding: 15px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.dhcp-security-grid h3 {
+    margin: 0 0 8px;
+    color: #172033;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.dhcp-security-grid p {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #405268;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* PACKET FORMAT */
+
+.dhcp-packet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.dhcp-packet-grid div {
+    padding: 15px 12px;
+    border: 0;
+    border-radius: 9px;
+    background: #f1f7fd;
+    color: #405268;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .dhcp-workflow-prev {
+        left: -48px;
+    }
+
+    .dhcp-workflow-next {
+        right: -48px;
+    }
+
+    .dhcp-workflow-arrow {
+        width: 38px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+    .dhcp-component-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dhcp-setting-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dhcp-packet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .dhcp-page {
+        padding: 26px 22px 50px;
+    }
+
+    .dhcp-component-grid,
+    .dhcp-message-grid,
+    .dhcp-security-grid,
+    .dhcp-setting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dhcp-topology {
+        height: 300px;
+    }
+
+    .dhcp-workflow-prev {
+        left: 8px;
+    }
+
+    .dhcp-workflow-next {
+        right: 8px;
+    }
+
+    .dhcp-workflow-arrow {
+        width: 36px;
+        height: 46px;
+        font-size: 27px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .dhcp-page {
+        padding: 20px 15px 40px;
+    }
+
+    .dhcp-intro h1 {
+        font-size: 34px;
+    }
+
+    .dhcp-topology {
+        height: 260px;
+    }
+
+    .dhcp-svg-label {
+        font-size: 10px;
+    }
+
+    .dhcp-svg-symbol {
+        font-size: 14px;
+    }
+
+    .dhcp-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dhcp-dots {
+        order: 3;
+        width: 100%;
+    }
+
+    .dhcp-section-heading h2 {
+        font-size: 24px;
+    }
+
+    .dhcp-packet-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,580 @@
+/* =========================================================
+   SNMP PAGE
+========================================================= */
+
+.snmp-page {
+    min-height: 100vh;
+    padding: 32px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.snmp-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+
+    background: #e8f4fd;
+    color: #3278c8;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.snmp-back:hover {
+    background: #dceefa;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.snmp-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.snmp-intro h1 {
+    margin: 0 0 26px;
+
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.snmp-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.snmp-intro-points > div {
+    padding: 15px 18px;
+
+    border-radius: 10px;
+
+    background: #eef6fd;
+}
+
+.snmp-intro-points p {
+    margin: 0;
+
+    color: #315b82;
+
+    font-size: 14px;
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.snmp-workflow-section,
+.snmp-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.snmp-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+}
+
+.snmp-section-heading h2 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.snmp-step-counter {
+    color: #52718e;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.snmp-workflow-layout {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.snmp-topology {
+    position: relative;
+
+    width: min(100%, 920px);
+    height: 340px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border: 1px solid #d9e7f5;
+    border-radius: 16px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 28px rgba(35, 82, 125, 0.05);
+}
+
+.snmp-topology-svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   KEYWORD
+========================================================= */
+
+.snmp-keyword-box {
+    fill: #edf6ff;
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.snmp-keyword-text {
+    fill: #3278c8;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+
+/* =========================================================
+   NETWORK LINES
+========================================================= */
+
+.snmp-svg-line {
+    fill: none;
+
+    stroke: #c9dbea;
+    stroke-width: 3;
+
+    stroke-linecap: round;
+}
+
+.snmp-flow-line {
+    fill: none;
+
+    stroke: #3190ed;
+    stroke-width: 4;
+
+    stroke-linecap: round;
+}
+
+.snmp-flow-curve {
+    fill: none;
+
+    stroke: #3190ed;
+    stroke-width: 4;
+
+    stroke-linecap: round;
+}
+
+.snmp-flow-arrow {
+    fill: #3190ed;
+}
+
+
+/* =========================================================
+   DOTTED CURVED CONNECTION
+========================================================= */
+
+.snmp-dotted-curve {
+    fill: none;
+
+    stroke: #c9dbea;
+    stroke-width: 2.5;
+
+    stroke-linecap: round;
+    stroke-dasharray: 5 7;
+}
+
+
+/* =========================================================
+   DEVICES
+========================================================= */
+
+.snmp-svg-device {
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.snmp-svg-router {
+    fill: #ffffff;
+
+    stroke: #cbddeb;
+    stroke-width: 2;
+}
+
+.snmp-active-device {
+    fill: #eef7ff;
+
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+
+/* =========================================================
+   DEVICE SYMBOLS
+========================================================= */
+
+.snmp-svg-symbol {
+    fill: #52718e;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.snmp-active-symbol {
+    fill: #1975c8;
+}
+
+
+/* =========================================================
+   DEVICE LABELS
+========================================================= */
+
+.snmp-svg-label {
+    fill: #1e2d3d;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-anchor: middle;
+}
+
+
+/* =========================================================
+   WORKFLOW ARROWS
+========================================================= */
+
+.snmp-workflow-arrow {
+    position: absolute;
+
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.snmp-workflow-prev {
+    left: -54px;
+}
+
+.snmp-workflow-next {
+    right: -54px;
+}
+
+.snmp-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+
+    border-color: #b9d8ee;
+
+    color: #3278c8;
+}
+
+.snmp-workflow-arrow:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   STEP PANEL
+========================================================= */
+
+.snmp-step-panel {
+    margin-top: 12px;
+
+    padding: 18px 20px;
+
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.snmp-step-progress {
+    height: 5px;
+
+    margin-bottom: 16px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #e7eff7;
+}
+
+.snmp-step-progress div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #3190ed;
+
+    transition: width 0.25s ease;
+}
+
+.snmp-step-content {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+}
+
+.snmp-step-text h3 {
+    margin: 0 0 7px;
+
+    color: #1d2d40;
+
+    font-size: 18px;
+    line-height: 1.4;
+
+    font-weight: 700;
+}
+
+.snmp-step-text p {
+    margin: 0;
+
+    color: #5c6c7e;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   THEORY
+========================================================= */
+
+.snmp-theory-box {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+.snmp-theory-card {
+    min-height: 145px;
+
+    padding: 18px;
+
+    border: 1px solid #d5e3ef;
+    border-radius: 14px;
+
+    background: white;
+
+    box-sizing: border-box;
+}
+
+.snmp-theory-card h3 {
+    margin: 0 0 14px;
+
+    color: #172033;
+
+    font-size: 17px;
+    line-height: 1.35;
+
+    font-weight: 500;
+}
+
+.snmp-theory-point {
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    background: #eef6fd;
+
+    color: #405268;
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+.snmp-theory-point p {
+    margin: 0;
+}
+
+.snmp-theory-point p + p {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .snmp-workflow-prev {
+        left: -45px;
+    }
+
+    .snmp-workflow-next {
+        right: -45px;
+    }
+
+    .snmp-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .snmp-page {
+        padding: 24px 20px 50px;
+    }
+
+    .snmp-topology {
+        width: 100%;
+        height: 320px;
+    }
+
+    .snmp-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .snmp-workflow-prev {
+        left: -10px;
+    }
+
+    .snmp-workflow-next {
+        right: -10px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .snmp-theory-box {
+        grid-template-columns: 1fr;
+    }
+
+    .snmp-topology {
+        height: 290px;
+    }
+
+    .snmp-svg-label {
+        font-size: 10px;
+    }
+
+    .snmp-svg-symbol {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .snmp-page {
+        padding: 20px 15px 40px;
+    }
+
+    .snmp-intro h1 {
+        font-size: 34px;
+    }
+
+    .snmp-topology {
+        height: 260px;
+    }
+
+    .snmp-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .snmp-step-text h3 {
+        font-size: 16px;
+    }
+}

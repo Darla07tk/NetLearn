@@ -1,0 +1,267 @@
+
+.devices-page {
+    height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.devices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.devices-header h1 {
+    margin: 0;
+    color: #155a8a;
+    font-size: 25px;
+}
+
+.device-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 38px;
+    padding: 8px 14px;
+    border: 1px solid #b8d7ef;
+    border-radius: 6px;
+    background: #eef6fc;
+    color: #1769aa;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.devices-content {
+    display: flex;
+    height: calc(100vh - 82px);
+    min-height: 0;
+    overflow: hidden;
+}
+
+.devices-list {
+    width: 270px;
+    flex-shrink: 0;
+    padding: 25px 15px;
+    border-right: 1px solid #dddddd;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.devices-list h2 {
+    margin: 0 10px 15px;
+    font-size: 18px;
+    color: #333333;
+}
+
+.devices-list button {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 0;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+    color: #444444;
+    text-align: left;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.devices-list button:hover {
+    background: #f3f8fc;
+}
+
+.devices-list button.device-active {
+    background: #eaf4fb;
+    color: #155a8a;
+    font-weight: 600;
+}
+
+.devices-list button span:first-child {
+    width: 22px;
+    flex-shrink: 0;
+}
+
+.devices-main {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    height: 100%;
+    padding: 35px 45px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+.device-heading {
+    margin-bottom: 25px;
+}
+
+.device-heading h2 {
+    margin: 0;
+    color: #222222;
+    font-size: 28px;
+    text-align: left;
+}
+
+.device-image-section {
+    width: 100%;
+    min-height: 280px;
+    margin-bottom: 40px;
+    border: 1px solid #d9e3eb;
+    background: #fafcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.device-image {
+    width: auto;
+    max-width: 90%;
+    max-height: 360px;
+    object-fit: contain;
+}
+
+.device-content-sections {
+    width: 100%;
+}
+
+.device-section {
+    margin-bottom: 38px;
+}
+
+.device-section h3 {
+    margin: 0 0 14px;
+    color: #24445c;
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+.device-section-content {
+    width: 100%;
+}
+
+.device-section-content p {
+    margin: 0 0 12px;
+    color: #444444;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.device-section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.device-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 45px;
+    padding-top: 22px;
+    border-top: 1px solid #dddddd;
+}
+
+.device-navigation button {
+    padding: 9px 18px;
+    border: 1px solid #1769aa;
+    background: #1769aa;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.device-navigation button:hover:not(:disabled) {
+    background: #155a8a;
+}
+
+.device-navigation button:disabled {
+    border-color: #cccccc;
+    background: #eeeeee;
+    color: #888888;
+    cursor: not-allowed;
+}
+
+.device-navigation span {
+    color: #555555;
+    font-size: 14px;
+}
+
+@media (max-width: 850px) {
+    .devices-content {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .devices-list {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-right: 0;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .devices-main {
+        height: auto;
+        overflow-y: visible;
+        padding: 30px 20px;
+    }
+
+    .device-image-section {
+        min-height: 240px;
+    }
+
+    .device-image {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .devices-page {
+        height: auto;
+        overflow: visible;
+    }
+
+    .devices-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .device-heading h2 {
+        font-size: 23px;
+    }
+
+    .device-section h3 {
+        font-size: 18px;
+    }
+
+    .device-section-content p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .device-image-section {
+        min-height: 210px;
+    }
+
+    .device-image {
+        max-width: 95%;
+        max-height: 230px;
+    }
+
+    .device-navigation {
+        gap: 15px;
+    }
+}

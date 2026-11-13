@@ -1,0 +1,502 @@
+/* SMTP THEORY */
+
+.smtp-page {
+    min-height: 100vh;
+    padding: 32px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* BACK */
+
+.smtp-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.smtp-back::after {
+    content: "Back";
+    font-size: 13px;
+}
+
+.smtp-back:hover {
+    background: #dceefa;
+}
+
+
+/* INTRO */
+
+.smtp-intro {
+    max-width: 1100px;
+    margin: 0 auto 45px;
+}
+
+.smtp-intro h1 {
+    margin: 0 0 24px;
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.smtp-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.smtp-intro-points > div {
+    padding: 15px 18px;
+    border-radius: 9px;
+    background: #f1f7fd;
+}
+
+.smtp-intro-points p {
+    margin: 0;
+    color: #405268;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* COMMON */
+
+.smtp-workflow-section,
+.smtp-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.smtp-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.smtp-section-heading h2 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #172033;
+}
+
+.smtp-step-counter {
+    color: #6a7d91;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* WORKFLOW */
+
+.smtp-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* ARROWS */
+
+.smtp-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.smtp-workflow-prev {
+    left: -54px;
+}
+
+.smtp-workflow-next {
+    right: -54px;
+}
+
+.smtp-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.smtp-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* TOPOLOGY */
+
+.smtp-topology {
+    position: relative;
+    width: min(100%, 920px);
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #d9e7f5;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 12px 30px rgba(35, 82, 125, 0.06);
+}
+
+.smtp-topology-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.smtp-svg-line {
+    stroke: #d2dfeb;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+}
+
+.smtp-svg-line-active {
+    stroke: #3190ed;
+    stroke-width: 3.5;
+    filter: drop-shadow(
+        0 0 4px rgba(49, 144, 237, 0.35)
+    );
+}
+
+.smtp-svg-device {
+    fill: #f8fbff;
+    stroke: #cbdceb;
+    stroke-width: 2;
+}
+
+.smtp-svg-active {
+    fill: #e4f2ff;
+    stroke: #3190ed;
+    stroke-width: 3;
+}
+
+.smtp-svg-symbol {
+    fill: #52718e;
+    font-size: 18px;
+    font-weight: 400;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.smtp-svg-node:has(.smtp-svg-active)
+.smtp-svg-symbol {
+    fill: #1975c8;
+}
+
+.smtp-svg-label {
+    fill: #1e2d3d;
+    font-size: 12px;
+    font-weight: 400;
+    text-anchor: middle;
+}
+
+.smtp-packet-label {
+    fill: #edf6ff;
+}
+
+.smtp-packet-text {
+    fill: #4d7da8;
+    font-size: 10px;
+    font-weight: 400;
+    text-anchor: middle;
+}
+
+
+/* STEP PANEL */
+
+.smtp-step-panel {
+    margin-top: 10px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.smtp-step-progress {
+    height: 5px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.smtp-step-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.smtp-step-content {
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+}
+
+.smtp-step-text h3 {
+    margin: 0 0 7px;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #172033;
+}
+
+.smtp-step-text p {
+    margin: 0;
+    color: #4d5d70;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* CONTROLS */
+
+.smtp-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.smtp-dots {
+    display: flex;
+    max-width: 650px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.smtp-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #cbd8e4;
+    cursor: pointer;
+}
+
+.smtp-dots .smtp-dot-active {
+    width: 20px;
+    border-radius: 8px;
+    background: #8dbde3;
+}
+
+
+/* THEORY */
+
+.smtp-theory-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    padding: 10px;
+
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+
+    background: white;
+}
+
+
+.smtp-theory-card {
+    min-height: 145px;
+
+    padding: 18px;
+
+    border: 1px solid #d5e3ef;
+    border-radius: 14px;
+
+    background: white;
+
+    box-sizing: border-box;
+}
+
+
+.smtp-theory-card h3 {
+    margin: 0 0 14px;
+
+    font-size: 17px;
+    line-height: 1.35;
+
+    font-weight: 400;
+
+    color: #172033;
+}
+
+
+.smtp-theory-point {
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    background: #f1f7fd;
+
+    color: #405268;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    font-weight: 500;
+}
+
+
+/* RESPONSIVE THEORY */
+
+@media (max-width: 1000px) {
+
+    .smtp-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .smtp-theory-box {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .smtp-workflow-prev {
+        left: -48px;
+    }
+
+    .smtp-workflow-next {
+        right: -48px;
+    }
+
+    .smtp-workflow-arrow {
+        width: 38px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+    .smtp-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .smtp-page {
+        padding: 26px 22px 50px;
+    }
+
+    .smtp-theory-box {
+        grid-template-columns: 1fr;
+    }
+
+    .smtp-topology {
+        height: 300px;
+    }
+
+    .smtp-workflow-prev {
+        left: 8px;
+    }
+
+    .smtp-workflow-next {
+        right: 8px;
+    }
+
+    .smtp-workflow-arrow {
+        width: 36px;
+        height: 46px;
+        font-size: 27px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .smtp-page {
+        padding: 20px 15px 40px;
+    }
+
+    .smtp-intro h1 {
+        font-size: 34px;
+    }
+
+    .smtp-topology {
+        height: 260px;
+    }
+
+    .smtp-svg-label {
+        font-size: 10px;
+    }
+
+    .smtp-svg-symbol {
+        font-size: 14px;
+    }
+
+    .smtp-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .smtp-dots {
+        order: 3;
+        width: 100%;
+    }
+
+    .smtp-section-heading h2 {
+        font-size: 24px;
+    }
+}

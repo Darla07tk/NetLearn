@@ -1,0 +1,587 @@
+/* =========================================================
+   FTP PAGE
+========================================================= */
+
+.ftp-page {
+    min-height: 100vh;
+    padding: 32px 42px 60px;
+    background: #f7faff;
+    color: #172033;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.ftp-back {
+    display: block;
+    margin-bottom: 28px;
+    padding: 8px 15px;
+    border: 1px solid #cfe2f2;
+    border-radius: 8px;
+    background: #e8f4fd;
+    color: #3278c8;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ftp-back:hover {
+    background: #dceefa;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.ftp-intro {
+    max-width: 1100px;
+    margin: 0 auto 42px;
+}
+
+.ftp-intro h1 {
+    margin: 0 0 26px;
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.ftp-intro-points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.ftp-info-box {
+    padding: 15px 18px;
+    border-radius: 10px;
+    background: #eef6fd;
+}
+
+.ftp-info-box p {
+    margin: 0;
+    color: #315b82;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.ftp-workflow-section,
+.ftp-theory-section {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+}
+
+.ftp-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.ftp-section-heading h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.ftp-step-counter {
+    color: #52718e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.ftp-workflow-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ftp-topology {
+    position: relative;
+    width: min(100%, 920px);
+    height: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #d9e7f5;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 24px rgba(35, 82, 125, 0.04);
+}
+
+.ftp-topology-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   NORMAL NETWORK LINES
+========================================================= */
+
+.ftp-network-line {
+    fill: none;
+    stroke: #cbdbea;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+
+/* =========================================================
+   ACTIVE BLUE FLOW
+========================================================= */
+
+.ftp-flow-line {
+    fill: none;
+    stroke: #3190ed;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 8 7;
+    animation: ftp-flow-move 0.8s linear infinite;
+}
+
+@keyframes ftp-flow-move {
+
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -15;
+    }
+}
+
+
+/* =========================================================
+   SMALL ARROW HEAD
+========================================================= */
+
+.ftp-arrow-head {
+    fill: #3190ed;
+}
+
+
+/* =========================================================
+   DEVICES
+========================================================= */
+
+.ftp-device {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+
+    transition:
+        fill 0.2s ease,
+        stroke 0.2s ease;
+}
+
+.ftp-node-active .ftp-device {
+    fill: #eef7ff;
+    stroke: #3190ed;
+    stroke-width: 2.5;
+}
+
+
+/* =========================================================
+   ROUTER
+========================================================= */
+
+.ftp-router {
+    fill: #ffffff;
+    stroke: #cbddeb;
+    stroke-width: 2;
+
+    transition:
+        fill 0.2s ease,
+        stroke 0.2s ease;
+}
+
+.ftp-node-active .ftp-router {
+    fill: #eef7ff;
+    stroke: #3190ed;
+    stroke-width: 2.5;
+}
+
+
+/* =========================================================
+   DEVICE SYMBOLS
+========================================================= */
+
+.ftp-device-symbol {
+    fill: #52718e;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.ftp-node-active .ftp-device-symbol {
+    fill: #1975c8;
+}
+
+
+/* =========================================================
+   ROUTER SYMBOL
+========================================================= */
+
+.ftp-router-symbol {
+    fill: #52718e;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.ftp-node-active .ftp-router-symbol {
+    fill: #1975c8;
+}
+
+
+/* =========================================================
+   DEVICE LABELS
+========================================================= */
+
+.ftp-device-label {
+    fill: #172033;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CURRENT STEP KEYWORD - TOP
+========================================================= */
+
+.ftp-keyword-box {
+    fill: #edf6ff;
+    stroke: #cfe2f2;
+    stroke-width: 1;
+}
+
+.ftp-keyword-text {
+    fill: #3278c8;
+    font-size: 10px;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+
+/* =========================================================
+   CURRENT STEP KEYWORD - BOTTOM
+========================================================= */
+
+.ftp-flow-keyword {
+    fill: #52718e;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   WORKFLOW ARROWS
+========================================================= */
+
+.ftp-workflow-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 52px;
+    padding: 0;
+
+    border: 1px solid #cfe2f2;
+    border-radius: 10px;
+
+    background: #e8f4fd;
+    color: #4d8abd;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.ftp-workflow-prev {
+    left: -54px;
+}
+
+.ftp-workflow-next {
+    right: -54px;
+}
+
+.ftp-workflow-arrow:hover:not(:disabled) {
+    background: #dceefa;
+    border-color: #b9d8ee;
+    color: #3278c8;
+}
+
+.ftp-workflow-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   STEP PANEL
+========================================================= */
+
+.ftp-step-panel {
+    margin-top: 12px;
+    padding: 18px 20px;
+    border: 1px solid #d9e7f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.ftp-step-progress {
+    height: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e7eff7;
+}
+
+.ftp-step-progress div {
+    height: 100%;
+    border-radius: inherit;
+    background: #3190ed;
+    transition: width 0.25s ease;
+}
+
+.ftp-step-content {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.ftp-step-text h3 {
+    margin: 0 0 7px;
+    color: #1d2d40;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.ftp-step-text p {
+    margin: 0;
+    color: #5c6c7e;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   STEP DOTS
+========================================================= */
+
+.ftp-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.ftp-dots {
+    display: flex;
+    max-width: 650px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.ftp-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #cbd8e4;
+    cursor: pointer;
+}
+
+.ftp-dots button:hover {
+    background: #9fc5e5;
+}
+
+.ftp-dots .ftp-dot-active {
+    width: 20px;
+    border-radius: 8px;
+    background: #8dbde3;
+}
+
+
+/* =========================================================
+   THEORY
+========================================================= */
+
+.ftp-theory-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #dbe8f5;
+    border-radius: 14px;
+    background: white;
+}
+
+.ftp-theory-card {
+    min-height: 145px;
+    padding: 18px;
+    border: 1px solid #d5e3ef;
+    border-radius: 14px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.ftp-theory-card h3 {
+    margin: 0 0 14px;
+    color: #172033;
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.ftp-theory-point {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #eef6fd;
+    color: #405268;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.ftp-theory-point p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .ftp-workflow-prev {
+        left: -45px;
+    }
+
+    .ftp-workflow-next {
+        right: -45px;
+    }
+
+    .ftp-theory-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .ftp-page {
+        padding: 24px 20px 50px;
+    }
+
+    .ftp-topology {
+        width: 100%;
+        height: 320px;
+    }
+
+    .ftp-workflow-arrow {
+        width: 36px;
+        height: 46px;
+    }
+
+    .ftp-workflow-prev {
+        left: -10px;
+    }
+
+    .ftp-workflow-next {
+        right: -10px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .ftp-theory-box {
+        grid-template-columns: 1fr;
+    }
+
+    .ftp-topology {
+        height: 290px;
+    }
+
+    .ftp-device-label {
+        font-size: 10px;
+    }
+
+    .ftp-device-symbol {
+        font-size: 14px;
+    }
+
+    .ftp-router-symbol {
+        font-size: 16px;
+    }
+
+    .ftp-keyword-text {
+        font-size: 9px;
+    }
+
+    .ftp-flow-keyword {
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .ftp-page {
+        padding: 20px 15px 40px;
+    }
+
+    .ftp-intro h1 {
+        font-size: 34px;
+    }
+
+    .ftp-topology {
+        height: 260px;
+    }
+
+    .ftp-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .ftp-step-text h3 {
+        font-size: 16px;
+    }
+}
